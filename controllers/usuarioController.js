@@ -1,13 +1,13 @@
 const Usuario = require('../Models/Usuarios')
 const bcrypt = require('bcrypt')
 
-module.exporte = class usuarioController {
+module.exports = class usuarioController {
     static login(req, res){
         res.render('')
     }
 
     static async loginPost(req, res){
-        const {email, password} = req.body
+        const {email, senha} = req.body
 
         const usuario = await Usuario.findOne({where: {email: email}})
 
@@ -36,7 +36,7 @@ module.exporte = class usuarioController {
     }
 
     static register(req, res){
-        res.render('')
+        res.render('/register')
     }
 
     static async registerPost(req, res){
@@ -65,10 +65,14 @@ module.exporte = class usuarioController {
         .then((usuario) =>{
             req.session.usuarioid = usuario.id
 
-            req.session.usuarioid = usuario.id
-
             req.flash('message', 'Cadastro realizado com sucesso')
 
+            // TESTE
+            if(usuario.papel == 'Administrador'){
+                req.session.save(()=>{
+                    res.redirect('/admin')
+                })
+            }
             req.session.save(()=>{
                 res.redirect('/')
             })
@@ -80,5 +84,4 @@ module.exporte = class usuarioController {
         res.redirect('/login')
     }
 
-    
 }
