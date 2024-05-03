@@ -1,0 +1,217 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+#logo{
+    width: 80px;
+    height: 80px;
+}
+header{
+
+}
+.navbar-container{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+}
+.navbar-logo{
+    display: flex;
+}
+.navbar-logo p{
+    padding-top: 1.20rem;
+    font-size: 35px;
+    font-family: "Dancing Script";
+    font-weight: bold;
+    margin-left: 0.80rem;
+    color: #FF9CF9;
+}
+nav{
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+nav ul{
+    display: flex;
+    list-style: none;
+    width: 350px;
+    justify-content: space-around;
+    font-size: 19px;
+}
+.navbar-login{
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+.navbar-login ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    align-items: center;
+    width: 250px;
+    font-size: 19px;
+    height: 30px;
+}
+nav li a{
+    text-decoration: none;
+    color:#717171;
+    transition: 0.5s;
+}
+nav li a:hover{
+    color: #FF9CF9;
+}
+.navbar-login li a{
+    text-decoration: none;
+    color: #717171;
+    font-weight: 400;
+}
+.navbar-login li a:hover{
+    color: #FAFAFA;
+}
+.navbar-login #register{
+    text-align: center;
+    border-radius: 5px;
+    background-color:#FAD2FF;
+    height: 25px;
+    width: 120px;
+}
+.navbar-login #login{
+    background-color: #FAD2FF;
+    width: 75px;
+    height: 25px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+main img{
+    width: 100%;
+}
+.text-main h1{
+    font-size: 60px;
+    margin-top: 9rem;
+    margin-left: 6rem;
+    color:  #FF9CF9;
+    font-family: "Dancing Script";
+    font-weight: 600;
+    position: absolute;
+}
+
+.p-main p{
+    width: 400px;
+    font-size: 23px;
+    margin-top: 15rem;
+    margin-left: 6rem;
+    color: #FFFF;
+    text-shadow: 0.1em 0.1em 0.2em black;
+    position: absolute;
+    line-height: 1.80rem;
+}
+.button-main{
+    position: absolute;
+    background-color: #FFFF;
+    width: 150px;
+    height: 35px;
+    margin-top: 22rem;
+    margin-left: 6rem;
+    text-align: center;
+    padding-top: 1rem;
+    text-transform: uppercase;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: 400;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+.button-main a{
+    text-decoration: none;
+    color:#FF9CF9;
+}
+.button-main:hover{
+    opacity: 90%;
+    transform: scale(1.05);
+}
+.massage-text h2{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 30px;
+    margin-top: 2rem;
+    color: #FFFF;
+    font-family: sans-serif;
+}
+.container-massage{
+    background-color:#FFCFED;
+    display: flex;
+    height:400px;
+    justify-content: center;
+}
+.container-massage img{
+    width: 500px;
+    height: 350px;
+    margin-top: 2rem;
+    border-radius: 5px;
+}
+.massage-p{
+    width: 480px;
+    font-size:23px;
+    margin-top: 1rem;
+    margin-right: 3rem;
+    line-height: 2.35rem;
+    text-align: center;
+    color: #FFFF;
+}
+.button-massage{
+    background-color: #FFFF;
+    width: 150px;
+    height: 35px;
+    text-transform: uppercase;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: 400;
+    border-radius: 5px;
+    transition: 0.5s;
+   margin-top: 0.80rem;
+   margin-left: 1rem;
+   font-family: sans-serif;
+}
+.button-massage a{
+    text-decoration: none;
+    color:#FF9CF9;
+}
+.button-massage:hover{
+    opacity: 70%;
+    transform: scale(1.05);
+}
+
+
+.container-footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.social-network p{
+    font-size: 22px;
+    font-weight:400;
+    text-align: center;
+    margin-bottom: 0.80rem;
+}
+
+.social-network ul{
+    display: flex;
+    justify-content:space-evenly;
+    width: 350px;
+    list-style: none;
+    cursor: pointer;
+}
+.dice img{
+    width: 30px;
+    height: 30px;
+}
+.dice{
+    margin-top: 0.80rem;
+}
+.dice li{
+    display: flex;
+    margin-top: 0.50rem;
+}
+.dice span{
+    font-size: 19px;
+    margin-left: 0.50rem;
+}
+
+
+

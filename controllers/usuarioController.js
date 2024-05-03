@@ -2,6 +2,14 @@ const Usuario = require('../Models/Usuarios')
 const bcrypt = require('bcrypt')
 
 module.exports = class usuarioController {
+    
+    static home(req, res){
+        res.render('home')
+    }
+    static about(req, res){
+        res.render('about')
+    }
+
     static login(req, res){
         res.render('')
     }
