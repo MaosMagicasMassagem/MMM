@@ -82,6 +82,7 @@ module.exports = class SessoesController{
             })
         })
       }
+        /*      
         static async confirmarSessao(req, res) {
             try {
                 // Extrair os dados da sessão do corpo da requisição
@@ -100,6 +101,6 @@ module.exports = class SessoesController{
                 console.error('Erro ao confirmar a sessão:', error);
                 res.sendStatus(500); // Resposta de erro
             }
-        }
-    }
+        } */
+}
 
