@@ -1,31 +1,54 @@
-.about-us{
-    background-color:#FFCFED;
+.about-us {
+    background-color: #FFCFED;
     display: flex;
     justify-content: center;
+    align-items: center;
     height: 650px;
+    transition: background-color 0.3s ease-in-out;
 }
-.about-img{
+
+.about-img {
     width: 350px;
     height: 600px;
     margin-top: 2rem;
     border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
 }
-.about-text{
+
+.about-text {
     margin-top: 3rem;
     margin-left: 2rem;
+    transition: transform 0.3s ease-in-out;
 }
-.about-text h1{
+
+.about-text h1 {
     text-align: center;
     text-transform: uppercase;
     font-size: 30px;
-    font-family:sans-serif;
+    font-family: sans-serif;
     color: #FFFF;
+    transition: color 0.3s ease-in-out;
 }
-.about-text p{
+
+.about-text p {
     width: 450px;
     font-size: 20px;
     margin-top: 1.50rem;
     line-height: 2rem;
     font-family: sans-serif;
-    color:#FFFF;
+    color: #FFFF;
+    transition: color 0.3s ease-in-out;
+}
+
+.about-img:hover {
+    transform: scale(1.05);
+}
+
+.about-text:hover {
+    transform: translateY(-5px);
+}
+
+.about-text h1:hover,
+.about-text p:hover {
+    color: #0a0a0a;
 }
