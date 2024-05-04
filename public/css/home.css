@@ -16,7 +16,7 @@ header{
     display: flex;
 }
 .navbar-logo p{
-    padding-top: 1.20rem;
+    /* padding-top: 1.20rem; */
     font-size: 35px;
     font-family: "Dancing Script";
     font-weight: bold;

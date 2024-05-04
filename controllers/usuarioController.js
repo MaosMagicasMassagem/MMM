@@ -44,7 +44,7 @@ module.exports = class usuarioController {
     }
 
     static register(req, res){
-        res.render('/register')
+        res.render('register')
     }
 
     static async registerPost(req, res){
