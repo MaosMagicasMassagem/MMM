@@ -226,7 +226,7 @@ main img{
     height: 30px;
 }
 .dice{
-    margin-top: 0.80rem;
+    margin-top: 0.50rem;    
 }
 .dice ul{
     display: flex;
@@ -235,7 +235,6 @@ main img{
 }
 .dice li{
     display: flex;
-    margin-top: 0.50rem;
     list-style: none;
 }
 .dice span{

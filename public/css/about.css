@@ -2,9 +2,7 @@
     background-color: #FFCFED;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 800px;
-    /* transition: background-color 0.3s ease-in-out; */
+    height: 720px;
 }
 
 .about-img {
@@ -12,13 +10,11 @@
     height: 600px;
     margin-top: 2rem;
     border-radius: 5px;
-    transition: transform 0.3s ease-in-out;
 }
 
 .about-text {
     margin-top: 3rem;
-    margin-left: 2rem;
-    transition: transform 0.3s ease-in-out;
+    margin-left: 5rem;
 }
 
 .about-text h1 {
@@ -27,9 +23,7 @@
     font-size: 30px;
     font-family: sans-serif;
     color: #FFFF;
-    transition: color 0.3s ease-in-out;
 }
-
 .about-text p {
     width: 450px;
     font-size: 20px;
@@ -37,18 +31,31 @@
     line-height: 2rem;
     font-family: sans-serif;
     color: #FFFF;
-    transition: color 0.3s ease-in-out;
 }
 
-.about-img:hover {
-    transform: scale(1.05);
-}
+.flip-container { 
+    
+    margin-left: 5rem;
+ }  	
 
-.about-text:hover {
-    transform: translateY(-5px);
+.flip-container:hover .flipper, .flip-container.hover .flipper {  		
+  transform: rotateY(180deg);  	
+}    
+.flip-container, .front, .back {  	
+  width: 320px;  	
+  height: 480px;  
 }
-
-.about-text h1:hover,
-.about-text p:hover {
-    color: #0a0a0a;
+.flipper {  	
+  transition: 0.5s ease-in;  	
+  transform-style: preserve-3d;    	
+  position: relative;  
 }
+    
+.front, .back {  	
+  backface-visibility: hidden;    	
+  position: absolute;  	
+  top: 0;  	
+ left: 0;  
+}
+.front { z-index: 2;  }    
+.back { transform: rotateY(180deg); }
