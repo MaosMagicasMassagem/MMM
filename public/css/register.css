@@ -47,17 +47,41 @@
    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
    font-size: 18px;
 }
+.form input:hover{
+    border: 1px solid #FFCFED;
+}
 .form ::placeholder{
     font-size: 20px;
     text-align: center;
 }
-.icon #icon-x a{
-    background-color: #FFCFED;
-    text-align: end;
-    margin-right: 1rem;
-    width: 30px; 
+#button-cad{
+    background-color:#FFCFED;
+    margin-top: 1.10rem;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: 600;
+    width: 150px;
+    color: #FFFF;
+    transition: 0.5s;
 }
-.icon{
-    background-color: #FFCFED;
-    text-align: end;
-} 
+#button-cad:hover{
+    transform: scale(1.02);
+    background-color: #FFFF;
+    color: #FFCFED;
+}
+.exit {
+    width: 50px;
+    height: 700px;
+    cursor: pointer;
+}
+.exit img{
+    width: 48px;
+    height: 48px;
+    transition: 0.5s;
+}
+.exit img:hover{
+    transform: rotate(180deg);
+}
+
+
+

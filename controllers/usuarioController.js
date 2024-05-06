@@ -11,7 +11,7 @@ module.exports = class usuarioController {
     }
 
     static login(req, res){
-        res.render('')
+        res.render('login')
     }
 
     static async loginPost(req, res){

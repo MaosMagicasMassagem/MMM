@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
+*{
+    background-image: url(../image/bela-paisagem-de-montanhas.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "Playfair", serif;
+}
+.container-form{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-image: none;
+}
+.form{
+    background-image: none;
+    width: 400px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0px 15px 20px -1px rgba(0,0,0,0.1);
+}
+.form h1{
+    background-image: none;
+    margin-bottom: 1.50rem;
+    font-size: 45px;
+    letter-spacing: 0.50rem;
+    color: #FAF9FA;
+    text-shadow: 1px 1px 2px  #FF95EA;
+
+    
+}
+.form input{
+    margin-top: 0.90rem;
+}
+.log{
+    display: flex;
+    width: 350px;
+    align-items: center;
+    background-image: none;
+}
+.log input{
+    width: 350px;
+    height: 40px;
+    position: relative;
+    background-image: none;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+    opacity: 75%;
+    background-color: #FFCFED;
+    outline: none;
+}
+.log input::placeholder{
+    font-size: 20px;
+    padding-left: 0.50rem;
+}
+.log img{
+    position: absolute;
+    margin-left: 310px;
+    margin-top: 1rem;
+    width: 20px;
+    height: 20px;
+    background-image: none;
+}
+#click-log{
+    background-image: none;
+    width: 150px;
+    height: 35px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    margin-top: 1.10rem;
+    background-color: #FFCFED;
+    opacity: 75%;
+    font-size: 20px;
+    font-weight: 600;
+    color: #FFFF;
+}
+#click-log:hover{
+    background-color: #FF95EA ;
+    border: 1px solid #FFCFED;
+    opacity: 50%;
+}
+.form p{
+    background-image: none;
+    margin-top: 0.50rem;
+    font-size: 18px;
+    color: #FFFF;
+}
+.form a{
+    background-image: none;
+    text-decoration: none;
+    font-size: 18px;
+    color: #FF95EA;
+}
