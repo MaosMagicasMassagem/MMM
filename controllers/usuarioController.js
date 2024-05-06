@@ -1,5 +1,5 @@
-const Usuario = require('../Models/Usuarios')
 const bcrypt = require('bcrypt')
+const Usuario = require('../Models/Usuarios')
 
 module.exports = class usuarioController {
     
@@ -47,45 +47,49 @@ module.exports = class usuarioController {
         res.render('register')
     }
 
-    static async registerPost(req, res){
-        const {nome, email, senha, papel} = req.body
-
-        const usuarioValido = await Usuario.findOne({where: {email:email}})
-
-        if(usuarioValido){
-            req.flash('message', 'Este e-mail já está sendo utilizado em outra conta')
-            res.render('')
-
-            return
-        }
-
-        const salt = bcrypt.genSaltSync(10)
-        const senhaHashed = bcrypt.hashSync(senha, salt)
-
-        const usuario = {
-            nome,
-            email,
-            senha: senhaHashed,
-            papel
-        }
-
-        Usuario.create(usuario)
-        .then((usuario) =>{
-            req.session.usuarioid = usuario.id
-
-            req.flash('message', 'Cadastro realizado com sucesso')
-
-            // TESTE
-            if(usuario.papel == 'Administrador'){
-                req.session.save(()=>{
-                    res.redirect('/admin')
-                })
+    static async registerPost(req, res) {
+        try {
+            const { nome, email, senha } = req.body;
+    
+            const usuarioValido = await Usuario.findOne({ where: { email: email } });
+    
+            if (usuarioValido) {
+                req.flash('message', 'Este e-mail já está sendo utilizado em outra conta');
+                res.render('');
+                return;
             }
-            req.session.save(()=>{
-                res.redirect('/')
-            })
-        })
+    
+            const salt = bcrypt.genSaltSync(10);
+            const senhaHashed = bcrypt.hashSync(senha, salt);
+    
+            const usuario = {
+                nome,
+                email,
+                senha: senhaHashed
+            };
+    
+            const novoUsuario = await Usuario.create(usuario);
+    
+            req.session.usuarioid = novoUsuario.id;
+            req.flash('message', 'Cadastro realizado com sucesso');
+    
+            // TESTE
+            if (novoUsuario.papel == 'Administrador') {
+                req.session.save(() => {
+                    res.redirect('/admin');
+                });
+            } else {
+                req.session.save(() => {
+                    res.redirect('/');
+                });
+            }
+        } catch (error) {
+            console.error('Erro ao registrar usuário:', error);
+            //req.flash('error', 'Ocorreu um erro ao registrar o usuário');
+            res.redirect('/');
+        }
     }
+    
 
     static logoutUsuario(req, res){
         req.session.destroy()
