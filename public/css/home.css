@@ -178,6 +178,7 @@ main img{
 .photos{
     display: flex;
     justify-content: space-evenly;
+    margin-bottom: 1rem;
 }
 .photos img{
     width: 500px;
@@ -185,7 +186,6 @@ main img{
     margin-top: 1rem;
     border-radius: 20px;
     transition: 0.5s;
-    background-color: #FF9CF9;
 }
 .photos img:hover{
     transform: scale(1.05);
@@ -196,12 +196,21 @@ main img{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    background-color:#BD77AF;
+    /* margin-top: 1rem; */
+    padding-top: 0.80rem;
 }
-.social-network p{
-    font-size: 22px;
+.container-footer span{
+    color: #FFFF;
+}
+.dice p{
+    font-size: 40px;
     font-weight:400;
     text-align: center;
     margin-bottom: 0.80rem;
+    font-family: "Dancing Script";
+    color: #FF9CF9;
 }
 
 .social-network ul{
@@ -210,6 +219,7 @@ main img{
     width: 350px;
     list-style: none;
     cursor: pointer;
+    margin-top: 0.50rem;
 }
 .dice img{
     width: 30px;
@@ -218,13 +228,21 @@ main img{
 .dice{
     margin-top: 0.80rem;
 }
+.dice ul{
+    display: flex;
+    justify-content: space-around;
+    width: 900px;
+}
 .dice li{
     display: flex;
     margin-top: 0.50rem;
+    list-style: none;
 }
 .dice span{
     font-size: 19px;
     margin-left: 0.50rem;
+    margin-top: 0.25rem;
+    color: #FFFF;
 }
 
 
