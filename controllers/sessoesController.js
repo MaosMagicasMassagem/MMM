@@ -7,7 +7,7 @@ const Sessoes = require('../Models/Sessoes');
 
 module.exports = class SessoesController{
     static async sessoesDashboard(req, res) {
-        const UsuarioId = req.session.userid
+        const UsuarioId = req.session.usuarioid
     
         const user = await Usuario.findOne({
           where: {
