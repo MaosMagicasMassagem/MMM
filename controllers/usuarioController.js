@@ -70,7 +70,7 @@ module.exports = class usuarioController {
     
             const novoUsuario = await Usuario.create(usuario);
     
-            req.session.usuarioid = novoUsuario.id;
+            req.session.id = novoUsuario.id;
             req.flash('message', 'Cadastro realizado com sucesso');
     
             // TESTE
