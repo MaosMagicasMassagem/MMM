@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
-.container-form{
+/* .container-form{
     background-color:#FFCFED;
     display: flex;
     justify-content: center;
@@ -81,7 +81,108 @@
 }
 .exit img:hover{
     transform: rotate(180deg);
+} */
+
+
+
+
+
+*{
+    background-image: url(../image/fundo-lunar-futurista.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "Playfair", serif;
+}
+.container-form{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-image: none;
+}
+.form{
+    background-image: none;
+    width: 400px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0px 15px 20px -1px rgba(0,0,0,0.1);
+}
+.form h1{
+    background-image: none;
+    margin-bottom: 1.50rem;
+    font-size: 45px;
+    letter-spacing: 0.50rem;
+    color: #FAF9FA;
+}
+.form input{
+    margin-top: 0.90rem;
+}
+.reg{
+    display: flex;
+    width: 350px;
+    align-items: center;
+    background-image: none;
+}
+.reg input{
+    width: 350px;
+    height: 40px;
+    position: relative;
+    background-image: none;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+    opacity: 75%;
+    background-color: #FF95EA;
+    outline: none;
+    font-size: 17px;
+    color: #FFFF;
+}
+.reg input:hover{
+  background-color: #FFCFED;
+    font-size: 17px;
+    color: #FFFF;
+}
+.reg input::placeholder{
+    font-size: 20px;
+    padding-left: 0.50rem;
+    color: #FFFF;
 }
 
+.reg img{
+    position: absolute;
+    margin-left: 310px;
+    margin-top: 1rem;
+    width: 20px;
+    height: 20px;
+    background-image: none;
+}
+#button-cad{
+    background-image: none;
+    width: 150px;
+    height: 35px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    margin-top: 1.10rem;
+    background-color: #FF95EA ;
+    opacity: 75%;
+    font-size: 20px;
+    font-weight: 600;
+    color: #FFFF;
+}
+#button-cad:hover{
+    background-color: #FFCFED;
+    border: 1px solid #FF95EA;
+}
 
-
+#exit{
+    background-image: none;
+    margin-top: 1rem;
+    font-size: 25px;
+    color: #FFFF;
+}
