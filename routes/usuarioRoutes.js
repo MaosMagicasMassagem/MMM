@@ -9,5 +9,6 @@ router.post('/login', usuarioController.loginPost)
 router.get('/register', usuarioController.register)
 router.post('/register', usuarioController.registerPost)
 router.get('/logout', usuarioController.logoutUsuario)
+router.get('/windows', usuarioController.windows)
 
 module.exports = router

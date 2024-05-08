@@ -13,6 +13,9 @@ module.exports = class usuarioController {
     static login(req, res){
         res.render('login')
     }
+    static windows(req , res){
+        res.render('windows')
+    }
 
     static async loginPost(req, res){
         const {email, senha} = req.body
@@ -39,7 +42,7 @@ module.exports = class usuarioController {
         req.flash('message', 'Login realizado com sucesso!')
 
         req.session.save(()=>{
-            res.redirect('/')
+            res.redirect('windows')
         })
     }
 
@@ -93,7 +96,7 @@ module.exports = class usuarioController {
 
     static logoutUsuario(req, res){
         req.session.destroy()
-        res.redirect('/login')
+        res.redirect('/')
     }
 
 }
