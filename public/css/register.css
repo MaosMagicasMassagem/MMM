@@ -83,7 +83,9 @@
     transform: rotate(180deg);
 } */
 
-
+.navbar-container, .navbar-logo, p, ul, li a{
+    background: #FAF9FA;
+}
 .alerts{
     color: white;
     background: red;

@@ -32,7 +32,7 @@ module.exports = class SessoesController{
       }
 
       static createSession(req, res){
-        res.render('')
+        res.render('marcarsessao')
       }
       static async createSessionSave(req, res){
         const UsuarioId = req.session.userid
@@ -66,8 +66,8 @@ module.exports = class SessoesController{
 
         Sessoes.create(Sessao)
         .then(()=>{
-            req.flash('Sessão criada com sucesso!')
-            res.render('')
+            req.flash('message', 'Sessão criada com sucesso!')
+            res.render('/marcarsessao', {message: message})
         })
       }
 

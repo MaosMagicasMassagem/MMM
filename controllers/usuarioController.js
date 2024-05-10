@@ -7,7 +7,7 @@ module.exports = class usuarioController {
         res.render('home', { isAuthenticated: req.session.isAuthenticated});
     }
     static about(req, res){
-        res.render('about')
+        res.render('about', { isAuthenticated: req.session.isAuthenticated})
     }
 
     static login(req, res){

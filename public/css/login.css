@@ -1,4 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
+/* .navbar-container{
+    background: #FAF9FA;
+}
+nav ul li a, .navbar-logo p{
+    background: #FAF9FA;
+} */
+
 *{
     background-image: url(../image/bela-paisagem-de-montanhas.jpg);
     background-repeat: no-repeat;
@@ -86,7 +93,7 @@
     border: 1px solid #FFCFED;
     opacity: 50%;
 }
-.form p{
+.form .register{
     background-image: none;
     margin-top: 0.50rem;
     font-size: 18px;
@@ -97,4 +104,8 @@
     text-decoration: none;
     font-size: 18px;
     color: #FF95EA;
+    font-weight: bold;
+}
+.navbar-container, .navbar-logo, p, ul, li a{
+    background: #FAF9FA;
 }
