@@ -13,12 +13,24 @@
                 <li><a href="#">Massagens</a></li>
             </ul>
         </nav>
-        <div class="navbar-login">
+        {{!-- <div class="navbar-login">
             <ul>
                 <li id="register"><a href="register">Cadastrar-se</a></li>
                 <li id="login"><a href="login">Login</a></li>
             </ul>
-        </div>
+        </div> --}}
+        <div class="navbar-login">
+        {{#if isAuthenticated}}
+        <ul>
+            <li id="register"><a href="/logout">LogOut</a></li>
+            </ul>
+        {{else}}
+             <ul>
+            <li id="login"><a href="/login">Login</a></li>
+            <li id="register"><a href="/register">Cadastrar-se</a></li>
+            </ul>
+        {{/if}}
+        <div>
     </div>
 </header>
 <main>

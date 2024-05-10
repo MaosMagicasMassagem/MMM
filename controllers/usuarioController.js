@@ -4,14 +4,14 @@ const Usuario = require('../Models/Usuarios')
 module.exports = class usuarioController {
     
     static home(req, res){
-        res.render('home');
+        res.render('home', { isAuthenticated: req.session.isAuthenticated});
     }
     static about(req, res){
         res.render('about')
     }
 
     static login(req, res){
-        res.render('login')
+        res.render('login', {isCreated: req.session.create, message2: req.flash('message2')})
     }
     static windows(req , res){
         res.render('windows')
@@ -36,7 +36,7 @@ module.exports = class usuarioController {
             })
             return
         }
-
+        req.session.isAuthenticated = true;
 
         req.session.usuarioid = usuario.id
         req.flash('message2', 'Login realizado com sucesso!')
@@ -74,7 +74,7 @@ module.exports = class usuarioController {
             const novoUsuario = await Usuario.create(usuario);
     
             req.session.userID= novoUsuario.id;
-    
+            req.session.create = true
             // // TESTE
             // if (novoUsuario.papel == 'Administrador') {
             //     req.session.save(() => {
@@ -84,6 +84,7 @@ module.exports = class usuarioController {
                 req.flash('message2', 'Usuario criado com sucesso!\n Faça o login!');
                 req.session.save(() => {
                 res.redirect('login');
+                //res.redirect nao pode receber nada (tipo req.flash) apenas o res.render
                 });
             }
             catch (error) {

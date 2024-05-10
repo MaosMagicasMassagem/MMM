@@ -2,6 +2,11 @@
 <div class="container-form">
     <form class="form" action="/login" method="post">
         <h1>Login</h1>
+        {{#if isCreated}}
+        <div class="alerts">
+                {{message2}}
+            </div>
+        {{/if}}
         <div class="log">
             <input type="email" name="email" placeholder="Digite o seu e-mail">
             <img src="/image/icons8-nova-mensagem-50 (1).png" alt="icone de email">
