@@ -84,7 +84,10 @@
 } */
 
 
-
+.alerts{
+    color: white;
+    background: red;
+}
 
 
 *{

@@ -4,7 +4,7 @@ const Usuario = require('../Models/Usuarios')
 module.exports = class usuarioController {
     
     static home(req, res){
-        res.render('home')
+        res.render('home');
     }
     static about(req, res){
         res.render('about')
@@ -23,7 +23,7 @@ module.exports = class usuarioController {
         const usuario = await Usuario.findOne({where: {email: email}})
 
         if(!usuario){
-            res.render('', {
+            res.render('login', {
             message: 'Usuário não encontrado',
             })
         return
@@ -31,7 +31,7 @@ module.exports = class usuarioController {
 
         const senhaMatch = bcrypt.compareSync(senha, usuario.senha)
         if(!senhaMatch){
-            res.render('', {
+            res.render('login', {
                 message: 'Senha inválida',
             })
             return
@@ -39,26 +39,26 @@ module.exports = class usuarioController {
 
 
         req.session.usuarioid = usuario.id
-        req.flash('message', 'Login realizado com sucesso!')
+        req.flash('message2', 'Login realizado com sucesso!')
 
         req.session.save(()=>{
-            res.redirect('windows')
+            res.redirect('/')
         })
     }
 
     static register(req, res){
-        res.render('register')
+        res.render('register', {message2: req.flash('message2')});
     }
 
     static async registerPost(req, res) {
         try {
             const { nome, email, senha } = req.body;
     
-            const usuarioValido = await Usuario.findOne({ where: { email: email } });
+            const usuarioNaoValido = await Usuario.findOne({ where: { email: email } });
     
-            if (usuarioValido) {
+            if (usuarioNaoValido) {
                 req.flash('message', 'Este e-mail já está sendo utilizado em outra conta');
-                res.render('');
+                res.render('register', { message: req.flash('message') })
                 return;
             }
     
@@ -73,23 +73,22 @@ module.exports = class usuarioController {
     
             const novoUsuario = await Usuario.create(usuario);
     
-            req.session.id = novoUsuario.id;
-            req.flash('message', 'Cadastro realizado com sucesso');
+            req.session.userID= novoUsuario.id;
     
-            // TESTE
-            if (novoUsuario.papel == 'Administrador') {
+            // // TESTE
+            // if (novoUsuario.papel == 'Administrador') {
+            //     req.session.save(() => {
+            //         res.redirect('/admin');
+            //     });
+            // } else {
+                req.flash('message2', 'Usuario criado com sucesso!\n Faça o login!');
                 req.session.save(() => {
-                    res.redirect('/admin');
-                });
-            } else {
-                req.session.save(() => {
-                    res.redirect('/');
+                res.redirect('login');
                 });
             }
-        } catch (error) {
+            catch (error) {
             console.error('Erro ao registrar usuário:', error);
             //req.flash('error', 'Ocorreu um erro ao registrar o usuário');
-            res.redirect('/');
         }
     }
     
