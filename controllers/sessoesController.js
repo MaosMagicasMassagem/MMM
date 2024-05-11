@@ -1,4 +1,3 @@
-const Sessoes = require('../Models/Sessoes')
 const Terapeuta = require('../Models/Terapeutas')
 const Usuario = require('../Models/Usuarios')
 const Servicos = require('../Models/Servicos')
@@ -6,6 +5,12 @@ const Servicos = require('../Models/Servicos')
 const Sessoes = require('../Models/Sessoes');
 
 module.exports = class SessoesController{
+    static createSession(req, res){
+      res.render('sessao')
+      if(err =>{
+        console.log(err)
+      })
+    }
     static async sessoesDashboard(req, res) {
         const UsuarioId = req.session.usuarioid
     
@@ -31,9 +36,6 @@ module.exports = class SessoesController{
         res.render('', { sessoes, emptySessoes })
       }
 
-      static createSession(req, res){
-        res.render('marcarsessao')
-      }
       static async createSessionSave(req, res){
         const UsuarioId = req.session.userid
         const data = req.body.data
@@ -67,7 +69,7 @@ module.exports = class SessoesController{
         Sessoes.create(Sessao)
         .then(()=>{
             req.flash('message', 'Sessão criada com sucesso!')
-            res.render('/marcarsessao', {message: message})
+            res.render('/sessao', {message: message})
         })
       }
 

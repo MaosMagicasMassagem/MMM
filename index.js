@@ -36,7 +36,7 @@ app.use(
 app.use(flash());
 
 app.use((req, res, next) =>{
-  console.log(req.session.usuarioid)
+  console.log(req.session.userID)
 
   if (req.session.usuarioid){
     res.locals.session = req.session;
@@ -51,9 +51,9 @@ async function syncDatabase() {
     await Terapeutas.sync();
     await Sessoes.sync();
     console.log('Modelo sincronizado com o banco de dados');
-    // Inicie o servidor após a sincronização
+    // Inicia o servidor após a sincronização
     app.listen(5000, () => {
-      console.log('Servidor iniciado na porta 5000');
+      console.log('Servidor iniciado na porta 7000');
     });
   } catch (error) {
     console.error('Erro ao sincronizar modelo com o banco de dados:', error);
