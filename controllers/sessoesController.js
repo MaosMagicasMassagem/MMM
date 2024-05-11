@@ -6,10 +6,16 @@ const Sessoes = require('../Models/Sessoes');
 
 module.exports = class SessoesController{
     static createSession(req, res){
-      res.render('sessao')
-      if(err =>{
-        console.log(err)
-      })
+        res.render('sessao', (err, html) => {
+            if (err) {
+                console.error('Erro ao renderizar a página de sessão:', err);
+                // Agora você pode lidar com o erro aqui, como enviar uma resposta de erro para o cliente
+                res.status(500).send('Erro ao renderizar a página de sessão');
+                return;
+            }
+            // Se não houver erro, você pode enviar o HTML renderizado normalmente
+            res.send(html);
+        });
     }
     static async sessoesDashboard(req, res) {
         const UsuarioId = req.session.usuarioid
